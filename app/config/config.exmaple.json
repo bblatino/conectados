@@ -1,0 +1,12 @@
+{
+  "development": {
+    "googleplus": {
+      "clientId": ""
+    }
+  },
+  "production": {
+    "googleplus": {
+      "clientId": ""
+    }
+  }
+}
