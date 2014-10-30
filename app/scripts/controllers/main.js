@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('conectadosApp')
-  .controller('MainCtrl', function ($scope, $window) {
+  .controller('MainCtrl', function ($scope, $window, cmGoogleApiConector) {
     // Methods.
     $scope.logout = function() {
       $window.gapi.auth.signOut();
@@ -15,6 +15,11 @@ angular.module('conectadosApp')
       if (args.status.google_logged_in) {
         $scope.logged = true;
         $scope.$digest();
+
+        var gapi = cmGoogleApiConector;
+        console.log('Google', gapi);
+        console.log('Google', gapi.me());
+
       }
     });
 
