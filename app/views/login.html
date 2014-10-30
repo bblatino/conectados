@@ -5,9 +5,17 @@
   <h3 class="text-muted">Grupo Joven Conectados</h3>
 </div>
 <div class="main">
-  <google-plus-signin clientid="">
-  </google-plus-signin>
-  <div class="info">
+  logged: {{logged}}
+  <div ng-hide="logged">
+    <google-plus-signin clientid="604198145844-3gltrlo4gd7gqi9hpbun20f7at88qbs6.apps.googleusercontent.com">
+    </google-plus-signin>
+  </div>
+  <div ng-show="logged">
+    <a href ng-click="logout()">Salir</a>
+  </div>
 
+  <div class="info">
+    {{test}}
+    <input type="text" ng-model="test"/>
   </div>
 </div>
