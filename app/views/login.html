@@ -1,19 +1,20 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#/login">Home</a></li>
-  </ul>
-  <h3 class="text-muted">Grupo Joven Conectados</h3>
-</div>
-<div class="main">
+<div layout layout-fill layout-align="center center">
 
-  <div ng-hide="logged">
-    <google-plus-signin clientid="604198145844-3gltrlo4gd7gqi9hpbun20f7at88qbs6.apps.googleusercontent.com">
-    </google-plus-signin>
-  </div>
-  <div ng-show="logged">
-    <a href ng-click="logout()">Salir</a>
-  </div>
+  <md-whiteframe class="md-whiteframe-z2" flex="50">
+    <div>Grupo Joven Conectados </div>
+    <div >
 
-  <div class="info">
-  </div>
+      <div ng-hide="logged">
+        <google-plus-signin clientid="604198145844-3gltrlo4gd7gqi9hpbun20f7at88qbs6.apps.googleusercontent.com">
+        </google-plus-signin>
+      </div>
+      <div ng-show="logged">
+        <a href ng-click="logout()">Salir</a>
+      </div>
+
+      <div class="info">
+      </div>
+
+    </div>
+  </md-whiteframe>
 </div>

@@ -6,6 +6,9 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'ngAria',
+    'ngAnimate',
+    'ngMaterial',
     'directive.g+signin'
   ])
   .config(function ($routeProvider) {
@@ -19,6 +22,6 @@ angular
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/login'
+        redirectTo: '/'
       });
   });
