@@ -3,8 +3,6 @@ Conectados
 
 Aplicación para Comunidad, creada para 
 
-
-
 ## Instalación 
 
 Necesita instalar Node.js. 
@@ -50,4 +48,4 @@ siguiendo las especificaciones de Google Design.
 
 ## Preguntas
 
-Escribir un correo a soporte@bblatinamerica.org
+Escribir un correo a [soporte@bblatinamerica.org](mailto:soporte@bblatinamerica.org)
