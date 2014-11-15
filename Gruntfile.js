@@ -406,17 +406,21 @@ module.exports = function (grunt) {
       }
     },
     sshexec: {
-      publish: {
-        command: 'sh .publish',
-        options: {
-          config: 'prod'
-        }
-      },
       deploy: {
         command: 'sh domains/bblatinamerica.org/html/conectados/.deploy',
         options: {
           config: 'prod'
         }
+      }
+    },
+
+    // Push build.
+    shell: {
+      options: {
+        stderr: false
+      },
+      publish: {
+        command: 'sh .publish'
       }
     }
 
@@ -484,14 +488,14 @@ module.exports = function (grunt) {
     'htmlmin',
     'buildcontrol:local',
     'sftp',
-    'sshexec:publish',
+    'shell:publish',
     'sshexec:deploy'
   ]);
 
   grunt.registerTask('deploy', [
     'buildcontrol:local',
     'sftp',
-    'sshexec:publish',
+    'shell:publish',
     'sshexec:deploy'
   ]);
 
