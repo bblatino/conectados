@@ -461,7 +461,7 @@ module.exports = function (grunt) {
     'htmlmin',
     'buildcontrol:local',
     'sftp',
-    'sftp:deploy'
+    'sshexec:deploy'
   ]);
 
   grunt.registerTask('default', [
