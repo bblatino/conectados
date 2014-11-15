@@ -17,8 +17,8 @@ angular
         templateUrl: 'views/login.html',
         controller: 'MainCtrl'
       })
-      .when('/suport', {
-        templateUrl: 'views/main.html',
+      .when('/grupojoven/soporte', {
+        templateUrl: 'views/grupojoven/main.html',
         controller: 'MainCtrl'
       })
       .otherwise({
