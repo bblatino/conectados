@@ -1,0 +1,6 @@
+{
+  "host" : "myhost",
+  "username" : "username",
+  "password" : "**************",
+  "path": "example/"
+}

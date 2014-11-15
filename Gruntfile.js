@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-ssh');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -373,7 +375,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Deployment.
+    // Publish.
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -387,7 +389,31 @@ module.exports = function (grunt) {
           branch: 'build'
         }
       }
+    },
+
+    // Deployment.
+    sshconfig: {
+      prod: grunt.file.readJSON('config.json')
+    },
+    sftp: {
+      prod: {
+        files: {
+          './': '.deploy'
+        },
+        options: {
+          config: 'prod'
+        }
+      }
+    },
+    sshexec: {
+      deploy: {
+        command: 'sh domains/bblatinamerica.org/html/conectados/.deploy',
+        options: {
+          config: 'prod'
+        }
+      }
     }
+
   });
 
   grunt.registerTask('serve', function (target) {
@@ -433,7 +459,9 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
-    'buildcontrol:local'
+    'buildcontrol:local',
+    'sftp',
+    'sftp:deploy'
   ]);
 
   grunt.registerTask('default', [
