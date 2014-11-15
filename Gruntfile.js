@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-ssh');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -371,9 +373,58 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
-    }
-  });
+    },
 
+    // Publish.
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      local: {
+        options: {
+          remote: '../',
+          branch: 'build'
+        }
+      }
+    },
+
+    // Deployment.
+    sshconfig: {
+      prod: grunt.file.readJSON('config.json')
+    },
+    sftp: {
+      prod: {
+        files: {
+          './': '.deploy'
+        },
+        options: {
+          config: 'prod'
+        }
+      }
+    },
+    sshexec: {
+      deploy: {
+        command: 'sh domains/bblatinamerica.org/html/conectados/.deploy',
+        options: {
+          config: 'prod'
+        }
+      }
+    },
+
+    // Push build.
+    shell: {
+      options: {
+        stderr: false
+      },
+      publish: {
+        command: 'sh .publish'
+      }
+    }
+
+  });
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -418,6 +469,34 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('publish', [
+    'clean:dist',
+    'bowerInstall',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'ngmin',
+    'copy:dist',
+    'cdnify',
+    'cssmin',
+    'uglify',
+    'rev',
+    'usemin',
+    'htmlmin',
+    'buildcontrol:local',
+    'sftp',
+    'shell:publish',
+    'sshexec:deploy'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'buildcontrol:local',
+    'sftp',
+    'shell:publish',
+    'sshexec:deploy'
   ]);
 
   grunt.registerTask('default', [
