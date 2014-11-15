@@ -3,3 +3,28 @@
     <span>Guías de Soporte</span>
   </h2>
 </md-toolbar>
+<md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
+  <md-content>
+
+    <md-list>
+
+      <md-item ng-repeat="item in list">
+        <md-item-content>
+          <div class="md-tile-left">
+            <img ng-src="{{item.img}}" class="face" alt="{{item.name}}">
+          </div>
+          <div class="md-tile-content">
+            <h3>{{item.name}}</h3>
+            <h4>{{item.language}}</h4>
+            <a ng-href="item.url">Descargar</a>
+            <p>
+              {{item.description}}
+            </p>
+          </div>
+        </md-item-content>
+      </md-item>
+
+    </md-list>
+
+  </md-content>
+</md-whiteframe>
