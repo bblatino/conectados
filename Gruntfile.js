@@ -464,9 +464,34 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
+    'htmlmin'
+  ]);
+
+  grunt.registerTask('publish', [
+    'clean:dist',
+    'bowerInstall',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'ngmin',
+    'copy:dist',
+    'cdnify',
+    'cssmin',
+    'uglify',
+    'rev',
+    'usemin',
     'htmlmin',
     'buildcontrol:local',
     'sftp',
+    'sshexec:publish',
+    'sshexec:deploy'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'buildcontrol:local',
+    'sftp',
+    'sshexec:publish',
     'sshexec:deploy'
   ]);
 
