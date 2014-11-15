@@ -406,6 +406,12 @@ module.exports = function (grunt) {
       }
     },
     sshexec: {
+      publish: {
+        command: 'sh .publish',
+        options: {
+          config: 'prod'
+        }
+      },
       deploy: {
         command: 'sh domains/bblatinamerica.org/html/conectados/.deploy',
         options: {
