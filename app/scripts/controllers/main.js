@@ -7,7 +7,6 @@ angular.module('conectadosApp')
       $window.gapi.auth.signOut();
     };
 
-
     // Observers.
     $scope.$on('event:google-plus-signin-success', function(event, args) {
       console.log('event:google-plus-signin-success', args);
