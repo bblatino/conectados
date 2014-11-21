@@ -1,12 +1,12 @@
 <md-toolbar>
   <h2 class="md-toolbar-tools">
-    <span>Guías de Soporte</span>
+    <span>Biblioteca</span>
   </h2>
 </md-toolbar>
 <section class="grid_outer">
   <md-content layout="vertical" layout-align="center center">
 
-    <md-subheader><h1>Manual de TT4</h1></md-subheader>
+    <md-subheader><h1>Libros Publicados</h1></md-subheader>
     <md-list ng-controller="ListCtrl">
 
       <md-item ng-repeat="item in list">
@@ -16,17 +16,16 @@
           </div>
           <div class="md-tile-content">
             <h3>{{item.name}}</h3>
-            <h4>{{item.language}}</h4>
+            <h4>{{item.author}}</h4>
             <a ng-href="{{item.url}}">Descargar</a>
             <p>
               {{item.description}}
             </p>
           </div>
         </md-item-content>
+        <md-divider ng-if="!$last"></md-divider>
       </md-item>
     </md-list>
 
   </md-content>
 </section>
-
-
