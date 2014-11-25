@@ -21,6 +21,10 @@ angular
         templateUrl: 'views/grupojoven/main.html',
         controller: 'MainCtrl'
       })
+      .when('/biblioteca', {
+        templateUrl: 'views/biblioteca/biblioteca.html',
+        controller: 'ListBibliotecaCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -9,7 +9,7 @@
  */
 angular.module('conectadosApp')
   .controller('ListBibliotecaCtrl', function ($scope, biblioteca) {
-    biclioteca.getDocs().then(function(list) {
-      $scope.list = list;
+    biblioteca.getDocs().then(function(list) {
+      $scope.libros = list;
     });
   });

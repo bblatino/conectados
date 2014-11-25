@@ -11,7 +11,7 @@ angular.module('conectadosApp')
     $scope.$on('event:google-plus-signin-success', function(event, args) {
       console.log('event:google-plus-signin-success', args);
 
-      if (args.status.google_logged_in) {
+      if (args.status['google_logged_in']) {
         $scope.logged = true;
         $scope.$digest();
 

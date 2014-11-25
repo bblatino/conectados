@@ -7,9 +7,9 @@
   <md-content layout="vertical" layout-align="center center">
 
     <md-subheader><h1>Libros Publicados</h1></md-subheader>
-    <md-list ng-controller="ListCtrl">
+    <md-list>
 
-      <md-item ng-repeat="item in list">
+      <md-item ng-repeat="item in libros">
         <md-item-content>
           <div class="md-tile-left">
             <img ng-src="{{item.img}}" class="face" alt="{{item.name}}">
