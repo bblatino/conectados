@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE teamtalk>
+<teamtalk version="4.0">
+ <host>
+  <name>user@95.211.6.9:10335</name>
+  <password>arvutSpa</password>
+  <address>95.211.6.9</address>
+  <tcpport>10335</tcpport>
+  <udpport>10335</udpport>
+  <auth>
+   <username>user</username>
+   <password>spausertt4</password>
+  </auth>
+  <join>
+   <channel>/</channel>
+   <password></password>
+  </join>
+ </host>
+</teamtalk>
