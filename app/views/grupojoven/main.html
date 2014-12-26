@@ -1,32 +1,133 @@
-<md-toolbar>
-  <h2 class="md-toolbar-tools">
-    <span>Guías de Soporte</span>
-  </h2>
-</md-toolbar>
-<section class="grid_outer">
-  <md-content layout="vertical" layout-align="center center">
+<div layout="row">
+  <!-- Nav bar -->
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('md')">
+    <md-toolbar>
+      <h1 class="md-toolbar-tools">Menu</h1>
+    </md-toolbar>
+    <md-content class="md-padding">
+      <md-button class="md-primary" hide-gt-md>
+        Close Sidenav Left
+      </md-button>
+      <p hide show-gt-md>
+        Team Talk 4
+      </p>
+    </md-content>
+  </md-sidenav>
 
-    <md-subheader><h1>Manual de TT4</h1></md-subheader>
-    <md-list ng-controller="ListCtrl">
+  <!-- Contenido -->
+  <md-content layout="column" layout-fill>
+    <md-toolbar>
+      <h2 class="md-toolbar-tools">
+        <span>Guías de Soporte</span>
+      </h2>
+    </md-toolbar>
 
-      <md-item ng-repeat="item in list">
-        <md-item-content>
-          <div class="md-tile-left">
-            <img ng-src="{{item.img}}" class="face" alt="{{item.name}}">
-          </div>
-          <div class="md-tile-content">
-            <h3>{{item.name}}</h3>
-            <h4>{{item.language}}</h4>
-            <a ng-href="{{item.url}}">Descargar</a>
-            <p>
-              {{item.description}}
-            </p>
-          </div>
-        </md-item-content>
-      </md-item>
-    </md-list>
+    <!-- Video Tutorial -->
+    <section layout-margin>
+      <md-subheader class="md-primary"><h1>Configuración TeamTalk 4</h1></md-subheader>
+
+      <md-tabs md-selected="0">
+        <!-- Español -->
+        <md-tab label="Español" layout="row" layout-margin>
+          <iframe width="560" height="315" src="//www.youtube.com/embed/5InOT3p5-Pc?list=PLNtMDYCB8ZcC3kHgVjGBGM4pd8vlby4zy" frameborder="0" allowfullscreen></iframe>
+
+          <!-- Configuration Files -->
+          <md-subheader class="md-primary">Archivo de Configuración</md-subheader>
+          <md-list ng-controller="ListCtrl">
+
+            <md-item ng-repeat="item in list | filter:{type: 'file', language: 'es'}">
+              <md-item-content>
+                <div class="md-tile-left">
+                  <img ng-src="{{item.img}}" class="face md-primary" alt="{{item.name}}">
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.name}}</h3>
+                  <a ng-href="{{item.url}}">Descargar</a>
+                  <p>
+                    {{item.description}}
+                  </p>
+                </div>
+              </md-item-content>
+            </md-item>
+          </md-list>
+
+          <!-- Manuales -->
+          <md-subheader class="md-primary">Manual de TeamTalk 4</md-subheader>
+          <md-list ng-controller="ListCtrl">
+
+            <md-item ng-repeat="item in list | filter:{type: 'manual', language: 'es'}">
+              <md-item-content>
+                <div class="md-tile-left">
+                  <img ng-src="{{item.img}}" class="face" alt="{{item.name}}">
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.name}}</h3>
+                  <a ng-href="{{item.url}}">Descargar</a>
+                  <p>
+                    {{item.description}}
+                  </p>
+                </div>
+              </md-item-content>
+            </md-item>
+          </md-list>
+
+        </md-tab>
+        <md-tab label="Português" layout="row" layout-margin>
+          <iframe width="560" height="315" src="//www.youtube.com/embed/wKuOyAg_L_k?list=PLNtMDYCB8ZcC3kHgVjGBGM4pd8vlby4zy" frameborder="0" allowfullscreen></iframe>
+
+          <!-- Configuration Files -->
+          <md-subheader class="md-primary">Arquivo de Configuração</md-subheader>
+          <md-list ng-controller="ListCtrl">
+
+            <md-item ng-repeat="item in list | filter:{type: 'file', language: 'pt'}">
+              <md-item-content>
+                <div class="md-tile-left">
+                  <img ng-src="{{item.img}}" class="face" alt="{{item.name}}">
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.name}}</h3>
+                  <a ng-href="{{item.url}}">Baixar</a>
+                  <p>
+                    {{item.description}}
+                  </p>
+                </div>
+              </md-item-content>
+            </md-item>
+          </md-list>
+
+          <!-- Manuales -->
+          <md-subheader class="md-primary">Manual de TeamTalk 4</md-subheader>
+          <md-list ng-controller="ListCtrl">
+
+            <md-item ng-repeat="item in list | filter:{type: 'manual', language: 'pt'}">
+              <md-item-content>
+                <div class="md-tile-left">
+                  <img ng-src="{{item.img}}" class="face" alt="{{item.name}}">
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.name}}</h3>
+                  <a ng-href="{{item.url}}">Baixar</a>
+                  <p>
+                    {{item.description}}
+                  </p>
+                </div>
+              </md-item-content>
+            </md-item>
+          </md-list>
+
+        </md-tab>
+      </md-tabs>
+
+
+
+    </section>
+
+
+
 
   </md-content>
-</section>
+</div>
+
+
 
 
