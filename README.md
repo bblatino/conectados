@@ -7,35 +7,50 @@ Aplicación para Comunidad, creada para
 
 Necesita instalar Node.js. 
 * [Instalar node.js](http://nodejs.org/download/) (require node.js version >= 0.10.x)
-* Instalar dependencias como modulos globales, abrir el terminal y escribir:
 
-    ```
-    npm install -g grunt grunt-cli yo 
-    ```
 * Clonar el proyecto.
 
-		```
-		git clone https://github.com/ceoaliongroo/conectados.git
-		```
-		__Nota:__ Es recomendado realizarlo con ssh, para evitar que solicite el usuario y la clave 
-		constantemente. ([Mas información](https://help.github.com/articles/which-remote-url-should-i-use/))
-		
-		
+```bash
+git clone https://github.com/ceoaliongroo/conectados.git
+```
+__Nota:__ Es recomendado realizarlo con ssh, para evitar que solicite el usuario y la clave 
+constantemente. ([Mas información](https://help.github.com/articles/which-remote-url-should-i-use/))
+
+* Instalar dependencias como modulos globales, abrir el terminal y escribir:
+
+```bash
+npm install -g grunt grunt-cli yo
+```
+
+```bash
+gem install bundler
+```
+__Nota:__ Ejecutar como ``sudo`` si necesita permisos para instalar.
+
+```
+touch Gemfile
+```
+
 * Instalar librerias del proyecto.
 
-		```
-		cd conectados
-		npm install
-		bower install
-		```
+```bash
+cd conectados
+npm install
+bower install
+```
 
 ## Demo 
  
+* Configurar la aplicación cliente:
+```
+cp config.example.json config.json
+```
+
 * Ejecutar el sitio demo:
 
-		```
-		grunt serve
-		```
+```
+grunt serve
+```
 
 ## Descripción técnica en general del proyecto
 
