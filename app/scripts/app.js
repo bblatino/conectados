@@ -21,6 +21,10 @@ angular
         templateUrl: 'views/grupojoven/main.html',
         controller: 'MainCtrl'
       })
+      .when('/grupojoven/media', {
+        templateUrl: 'views/grupojoven/media.html',
+        controller: 'MediaCtrl'
+      })
       .when('/biblioteca', {
         templateUrl: 'views/biblioteca/biblioteca.html',
         controller: 'ListBibliotecaCtrl'
