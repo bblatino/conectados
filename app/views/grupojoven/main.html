@@ -42,7 +42,7 @@
                 </div>
                 <div class="md-tile-content">
                   <h3>{{item.name}}</h3>
-                  <a ng-href="{{item.url}}">Descargar</a>
+                  <a target="_self"  ng-href="{{item.url}}" download="{{item.name}}">Descargar</a>
                   <p>
                     {{item.description}}
                   </p>
