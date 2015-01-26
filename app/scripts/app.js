@@ -32,4 +32,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .run(function(OAuth) {
+    OAuth.initialize('8aFi4S7G71dpb4JjQJw7TzD7560');
   });

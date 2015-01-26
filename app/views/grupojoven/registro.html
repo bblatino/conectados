@@ -1,0 +1,26 @@
+<div layout="column" layout-align="center center">
+  <p>Formulario de Regisro al Grupo Joven Latino Americano</p>
+
+  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+    <md-input-container>
+      <label>Nombre</label>
+      <input ng-model="user.firstname">
+    </md-input-container>
+    <md-input-container>
+      <label>Apellido</label>
+      <input ng-model="user.lastname">
+    </md-input-container>
+  </md-content>
+  <md-content md-theme="docs-dark" class="md-padding" layout="column" layout-sm="column">
+    <md-input-container>
+      <label>Correo Electrónico</label>
+      <input ng-model="user.email" type="email">
+    </md-input-container>
+    <md-input-container>
+      <label>Contraseña</label>
+      <input ng-model="user.password" type="password">
+    </md-input-container>
+  </md-content>
+  <md-button ng-href="#/grupojoven/registro" class="md-primary">Registro</md-button>
+
+</div>
