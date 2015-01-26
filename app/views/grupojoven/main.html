@@ -1,6 +1,7 @@
-<div layout="column" layout-align="center center">
+<div ng-controller="GrupoJovenCtrl as auth"  layout="column" layout-align="center center">
   <p>Bienvenidos, al Grupo Joven Latino Americano</p>
 
   <md-button ng-href="#/grupojoven/registro" class="md-primary">Registro</md-button>
+  <md-button ng-click="auth.login()" class="md-primary">Entrar usando Google Account </md-button>
 
 </div>
