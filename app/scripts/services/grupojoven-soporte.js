@@ -19,6 +19,7 @@ angular.module('conectadosApp')
           language: 'es',
           img: 'http://google.github.io/material-design-icons/action/svg/ic_description_24px.svg',
           url: 'https://drive.google.com/file/d/0B9CoR0oiB4hRcVlrNkpwNHFfelk/view?usp=sharing',
+          filename: null,
           type: 'manual'
         },
         {
@@ -27,6 +28,7 @@ angular.module('conectadosApp')
           language: 'pt',
           img: 'http://google.github.io/material-design-icons/action/svg/ic_description_24px.svg',
           url: 'https://drive.google.com/a/kabbalahsites.org/file/d/0B0YtsbIsb8XHenlOTjFUZWlka0k/view?usp=sharing',
+          filename: null,
           type: 'manual'
         },
         {
@@ -35,6 +37,7 @@ angular.module('conectadosApp')
           language: 'es',
           img: 'http://google.github.io/material-design-icons/file/svg/ic_file_download_24px.svg',
           url: '/conectados/files/tt4_grupo_joven.tt',
+          filename: 'tt4_grupo_joven.tt',
           type: 'file'
         },
         {
@@ -43,6 +46,7 @@ angular.module('conectadosApp')
           language: 'pt',
           img: 'http://google.github.io/material-design-icons/file/svg/ic_file_download_24px.svg',
           url: '/conectados/files/tt4_grupo_joven.tt',
+          filename: 'tt4_grupo_joven.tt',
           type: 'file'
         }
 
