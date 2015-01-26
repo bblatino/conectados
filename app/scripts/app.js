@@ -14,12 +14,16 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/login.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
+      })
+      .when('/grupojoven', {
+        templateUrl: 'views/grupojoven/main.html',
+        controller: 'GrupoJovenCtrl'
       })
       .when('/grupojoven/soporte', {
-        templateUrl: 'views/grupojoven/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/grupojoven/soporte.html',
+        controller: 'SoporteCtrl'
       })
       .when('/grupojoven/media', {
         templateUrl: 'views/grupojoven/media.html',

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('conectadosApp')
-  .controller('MainCtrl', function ($scope, $window, cmGoogleApiConector) {
+  .controller('SoporteCtrl', function ($scope, $window, cmGoogleApiConector) {
     // Methods.
     $scope.logout = function() {
       $window.gapi.auth.signOut();
