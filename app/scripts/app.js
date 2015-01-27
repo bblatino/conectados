@@ -6,12 +6,14 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'ngMessages',
     'ngAria',
     'ngAnimate',
     'ngMaterial',
-    'directive.g+signin'
+    'directive.g+signin',
+    'LocalStorageModule'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, localStorageServiceProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -23,15 +25,30 @@ angular
       })
       .when('/grupojoven/soporte', {
         templateUrl: 'views/grupojoven/soporte.html',
-        controller: 'SoporteCtrl'
+        controller: 'SoporteCtrl',
+        access: {
+          app: 'grupojoven'
+        }
+      })
+      .when('/grupojoven/registro', {
+        templateUrl: 'views/grupojoven/registro.html',
+        controller: 'RegistroCtrl'
       })
       .when('/biblioteca', {
         templateUrl: 'views/biblioteca/biblioteca.html',
-        controller: 'ListBibliotecaCtrl'
+        controller: 'ListBibliotecaCtrl',
+        access: {
+          app: 'biblioteca'
+        }
       })
       .otherwise({
         redirectTo: '/'
       });
+
+    // Config localstorage.
+    localStorageServiceProvider
+      .setPrefix('conectados');
+
   })
   .run(function(OAuth) {
     OAuth.initialize('8aFi4S7G71dpb4JjQJw7TzD7560');

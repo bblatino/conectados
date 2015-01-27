@@ -1,19 +1,16 @@
 'use strict';
 
 angular.module('conectadosApp')
-  .controller('GrupoJovenCtrl', function (OAuth, User) {
+  .controller('GrupoJovenCtrl', function (OAuth, User, Session) {
 
     /**
      * Login the user using OAuth service.
      *
      */
     this.login = function() {
-      OAuth.login();
-    };
-
-
-    this.signup = function(user) {
-      User.signup(user);
+      OAuth.login().then(function(response){
+        console.log('login::', response, User, Session);
+      });
     };
 
 
