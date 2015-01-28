@@ -1,7 +1,59 @@
 <div ng-controller="GrupoJovenCtrl as auth"  layout="column" layout-align="center center">
   <p>Bienvenidos, al Grupo Joven Latino Americano</p>
 
-  <md-button ng-href="#/grupojoven/registro" class="md-primary">Registro</md-button>
-  <md-button ng-click="auth.login()" class="md-primary">Entrar usando Google Account </md-button>
+  <md-content layout="row">
+    <md-list flex="50">
+      <md-item>
+        <md-item-content>
+          <li><md-button ng-href="#/grupojoven/registro" class="md-primary">Registro</md-button></li>
+        </md-item-content>
+      </md-item>
+      <md-item>
+        <md-item-content>
+          <li><md-button ng-href="#/grupojoven/media" class="md-primary">Transmisiones anteriores</md-button></li>
+        </md-item-content>
+      </md-item>
+      <md-item>
+        <md-item-content>
+          <li><md-button ng-href="#/grupojoven/soporte" class="md-primary">Soporte</md-button></li>
+        </md-item-content>
+      </md-item>
+    </md-list>
+
+    <md-content id="form-login" flex="50">
+      <md-toolbar class="md-primary">
+        <h1 class="md-toolbar-tools">
+          Entrar
+        </h1>
+      </md-toolbar>
+      <form name="userLoginForm" layout-fill>
+        <md-content class="md-padding" layout="column" layout-sm="column">
+          <md-input-container layout="row" layout-align="space-between end">
+            <label  layout-margin>Correo Electrónico</label>
+            <input required ng-model="user.email" type="email" flex="70">
+          </md-input-container>
+          <md-input-container layout="row" layout-align="space-between end">
+            <label layout-margin>Contraseña</label>
+            <input required ng-model="user.password" type="password" flex="70">
+          </md-input-container>
+          <md-button ng-click="auth.sigin(user)" class="md-primary" layout-margin>Entrar</md-button>
+
+          <div ng-messages="userLoginForm.user.email.$error">
+            <div ng-message="required">Favor escriba su correo electrónico.</div>
+            <div ng-message="type">Favor escriba un correo electrónico válido.</div>
+          </div>
+          <div ng-messages="userLoginForm.user.password.$error">
+            <div ng-message="required">Favor escriba su contrasenña.</div>
+          </div>
+        </md-content>
+      </form>
+      <md-divider></md-divider>
+      <md-button ng-click="auth.loginGoogle()" class="md-primary">Entrar usando Google Account </md-button>
+    </md-content>
+  </md-content>
+
+
+
+
 
 </div>

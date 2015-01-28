@@ -7,8 +7,14 @@ angular.module('conectadosApp')
      * Login the user using OAuth service.
      *
      */
-    this.login = function() {
-      OAuth.login().then(function(response){
+    this.loginGmail = function() {
+      OAuth.loginGoogle().then(function(response) {
+        console.log('login::', response, User, Session);
+      });
+    };
+
+    this.sigin  = function(user) {
+      User.sigin(user).then(function(response) {
         console.log('login::', response, User, Session);
       });
     };

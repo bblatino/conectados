@@ -10,7 +10,7 @@ angular.module('conectadosApp')
     /**
      * Using OAuth login and get the user information.
      */
-    this.login = function() {
+    this.loginGoogle = function() {
       //Using popup
       return OAuth.popup('google')
         .done(function(result) {

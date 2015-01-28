@@ -3,11 +3,10 @@
 angular.module('conectadosApp')
   .controller('RegistroCtrl', function (User) {
 
-    // Register a new user
+    // Register a new user.
     this.signup = function(user) {
       // Validate password.
       if (user.password !== user.repeatPassword) {
-
         return;
       }
 

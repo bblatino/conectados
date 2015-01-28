@@ -4,7 +4,7 @@
       Formulario de Registro al Grupo Joven Latino Americano
     </h1>
   </md-toolbar>
-  <form name="userForm" layout-fill>
+  <form name="userRegisterForm" layout-fill>
     <md-content class="md-padding" layout="column" layout-sm="column">
       <md-input-container layout="row" layout-align="space-between end">
         <label layout-margin>Nombre</label>
@@ -28,17 +28,17 @@
       </md-input-container>
       <md-button ng-click="auth.signup(user)" class="md-primary" layout-margin>Registrar</md-button>
 
-      <div ng-messages="userForm.user.firstname.$error">
+      <div ng-messages="userRegisterForm.user.firstname.$error">
         <div ng-message="required">Favor escriba su nombre.</div>
       </div>
-      <div ng-messages="userForm.user.lastname.$error">
+      <div ng-messages="userRegisterForm.user.lastname.$error">
         <div ng-message="required">Favor escriba su apellido.</div>
       </div>
-      <div ng-messages="userForm.user.email.$error">
+      <div ng-messages="userRegisterForm.user.email.$error">
         <div ng-message="required">Favor escriba su correo electrónico.</div>
         <div ng-message="type">Favor escriba un correo electrónico válido.</div>
       </div>
-      <div ng-messages="userForm.user.password.$error">
+      <div ng-messages="userRegisterForm.user.password.$error">
         <div ng-message="required">Favor escriba su correo electrónico.</div>
         <div ng-message="type">Favor escriba un correo electrónico válido.</div>
       </div>
