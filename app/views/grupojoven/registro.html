@@ -1,47 +1,56 @@
-<div ng-controller="RegistroCtrl as auth" layout="column" layout-align="center center">
-  <md-toolbar class="md-primary">
-    <h1 class="md-toolbar-tools">
-      Formulario de Registro al Grupo Joven Latino Americano
-    </h1>
-  </md-toolbar>
-  <form name="userRegisterForm" layout-fill>
-    <md-content class="md-padding" layout="column" layout-sm="column">
-      <md-input-container layout="row" layout-align="space-between end">
-        <label layout-margin>Nombre</label>
-        <input required ng-model="user.firstname" flex="70">
-      </md-input-container>
-      <md-input-container layout="row" layout-align="space-between end">
-        <label layout-margin>Apellido</label>
-        <input required ng-model="user.lastname" flex="70">
-      </md-input-container>
-      <md-input-container layout="row" layout-align="space-between end">
-        <label  layout-margin>Correo Electrónico</label>
-        <input required ng-model="user.email" type="email" flex="70">
-      </md-input-container>
-      <md-input-container layout="row" layout-align="space-between end">
-        <label layout-margin>Contraseña</label>
-        <input required ng-model="user.password" type="password" flex="70">
-      </md-input-container>
-      <md-input-container layout="row" layout-align="space-between end">
-        <label layout-margin>Repetir Contraseña</label>
-        <input required ng-model="user.repeatPassword" type="password" flex="70">
-      </md-input-container>
-      <md-button ng-click="auth.signup(user)" class="md-primary" layout-margin>Registrar</md-button>
+<md-content layout="column" layout-align="center center" >
+  <div ng-controller="RegistroCtrl as auth" class="form-box" flex="50">
+    <md-toolbar class="md-primary">
+      <h1 class="md-toolbar-tools">
+        Formulario de Registro al Grupo Joven Latino Americano
+      </h1>
+    </md-toolbar>
+    <form name="userRegisterForm" layout-fill>
+      <md-content class="md-padding" layout="column" layout-sm="column">
+        <md-input-container layout="row" layout-align="space-between end">
+          <label layout-margin>Nombre</label>
+          <input required ng-model="user.firstname" flex="70">
+        </md-input-container>
+        <md-input-container layout="row" layout-align="space-between end">
+          <label layout-margin>Apellido</label>
+          <input required ng-model="user.lastname" flex="70">
+        </md-input-container>
+        <md-input-container layout="row" layout-align="space-between end">
+          <label  layout-margin>Correo Electrónico</label>
+          <input required ng-model="user.email" type="email" flex="70">
+        </md-input-container>
+        <md-input-container layout="row" layout-align="space-between end">
+          <label layout-margin>Contraseña</label>
+          <input required ng-model="user.password" type="password" flex="70">
+        </md-input-container>
+        <md-input-container layout="row" layout-align="space-between end">
+          <label layout-margin>Repetir Contraseña</label>
+          <input required ng-model="user.repeatPassword" type="password" flex="70">
+        </md-input-container>
 
-      <div ng-messages="userRegisterForm.user.firstname.$error">
-        <div ng-message="required">Favor escriba su nombre.</div>
-      </div>
-      <div ng-messages="userRegisterForm.user.lastname.$error">
-        <div ng-message="required">Favor escriba su apellido.</div>
-      </div>
-      <div ng-messages="userRegisterForm.user.email.$error">
-        <div ng-message="required">Favor escriba su correo electrónico.</div>
-        <div ng-message="type">Favor escriba un correo electrónico válido.</div>
-      </div>
-      <div ng-messages="userRegisterForm.user.password.$error">
-        <div ng-message="required">Favor escriba su correo electrónico.</div>
-        <div ng-message="type">Favor escriba un correo electrónico válido.</div>
-      </div>
-    </md-content>
-  </form>
-</div>
+        <md-secction>
+          <md-button ng-click="auth.signup(user)" class="md-primary" layout-margin>Registrar</md-button>
+          <md-button href="#/grupojoven" class="md-primary" layout-margin>Volver</md-button>
+        </md-secction>
+
+
+        <div ng-messages="userRegisterForm.user.firstname.$error">
+          <div ng-message="required">Favor escriba su nombre.</div>
+        </div>
+        <div ng-messages="userRegisterForm.user.lastname.$error">
+          <div ng-message="required">Favor escriba su apellido.</div>
+        </div>
+        <div ng-messages="userRegisterForm.user.email.$error">
+          <div ng-message="required">Favor escriba su correo electrónico.</div>
+          <div ng-message="type">Favor escriba un correo electrónico válido.</div>
+        </div>
+        <div ng-messages="userRegisterForm.user.password.$error">
+          <div ng-message="required">Favor escriba su correo electrónico.</div>
+          <div ng-message="type">Favor escriba un correo electrónico válido.</div>
+        </div>
+      </md-content>
+    </form>
+  </div>
+</md-content>
+
+
