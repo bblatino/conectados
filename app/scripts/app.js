@@ -25,10 +25,7 @@ angular
       })
       .when('/grupojoven/soporte', {
         templateUrl: 'views/grupojoven/soporte.html',
-        controller: 'SoporteCtrl',
-        access: {
-          app: 'grupojoven'
-        }
+        controller: 'SoporteCtrl'
       })
       .when('/grupojoven/registro', {
         templateUrl: 'views/grupojoven/registro.html',
