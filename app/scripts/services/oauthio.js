@@ -5,12 +5,12 @@ angular.module('conectadosApp')
     var OAuth = this;
 
     // Extend the library.
-    angular.extend(this, $window.OAuth);
+    angular.extend(OAuth, $window.OAuth);
 
     /**
      * Using OAuth login and get the user information.
      */
-    this.loginGoogle = function() {
+    OAuth.loginGoogle = function() {
       //Using popup
       return OAuth.popup('google')
         .done(function(result) {

@@ -4,13 +4,19 @@ angular.module('conectadosApp')
   .controller('RegistroCtrl', function (User) {
 
     // Register a new user.
-    this.signup = function(user) {
+    this.register = function(user, provider) {
+      console.log(user, provider);
       // Validate password.
-      if (user.password !== user.repeatPassword) {
+      if (angular.isDefined(user) && (user.password !== user.repeatPassword)) {
         return;
       }
 
-      User.signup(user);
+      // Register te service.
+      User.register(user, provider).then(function(response) {
+        console.log('RegistroCtrl:: Registro ok', response);
+      }, function(err) {
+        console.log('RegistroCtrl:: Registro fallido', err);
+      });
     };
 
 
