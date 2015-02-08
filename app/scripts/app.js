@@ -11,9 +11,10 @@ angular
     'ngAnimate',
     'ngMaterial',
     'directive.g+signin',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'cm.angularStormpath'
   ])
-  .config(function ($routeProvider, localStorageServiceProvider) {
+  .config(function ($routeProvider, localStorageServiceProvider, stormpathProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
