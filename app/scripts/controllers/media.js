@@ -8,10 +8,6 @@
  * Controller of the conectadosApp
  */
 angular.module('conectadosApp')
-<<<<<<< HEAD
-  .controller('MediaCtrl', function ($scope) {
-    console.log('MediaCtrl');
-=======
   .controller('MediaCtrl', function ($scope, $anchorScroll, $location) {
     /**
      * Go to the section in the content
@@ -23,5 +19,5 @@ angular.module('conectadosApp')
       $location.hash(section);
       $anchorScroll();
     };
->>>>>>> 4d834d7b0c34ec6e372b12e4fab63473467e5383
+
   });
