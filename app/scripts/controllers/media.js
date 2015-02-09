@@ -19,4 +19,5 @@ angular.module('conectadosApp')
       $location.hash(section);
       $anchorScroll();
     };
+
   });
