@@ -11,7 +11,13 @@ angular
     'ngMaterial',
     'directive.g+signin'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('orange')
+      .accentPalette('green')
+      .warnPalette('red')
+      .backgroundPalette('grey');
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
