@@ -23,5 +23,9 @@ angular.module('conectadosApp')
       $location.hash(section);
       $anchorScroll();
     };
+<<<<<<< HEAD
 >>>>>>> 4d834d7b0c34ec6e372b12e4fab63473467e5383
+=======
+
+>>>>>>> 33cc2f7c5bdd92f816ae252d3adac63d1ae9a261
   });
