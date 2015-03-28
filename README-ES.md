@@ -13,7 +13,7 @@ Necesita instalar Node.js.
 ```bash
 git clone https://github.com/ceoaliongroo/conectados.git
 ```
-__Nota:__ Es recomendado realizarlo con ssh, para evitar que solicite el usuario y la clave 
+__Nota:__ Es recomendado realizarlo con ssh keypair, para evitar que solicite el usuario y la clave 
 constantemente. ([Mas información](https://help.github.com/articles/which-remote-url-should-i-use/))
 
 * Instalar dependencias como modulos globales, abrir el terminal y escribir:
