@@ -1,4 +1,33 @@
-<div layout="row" layout-align="center center">
+<div layout="column" layout-align="center">
   <p>Bienvenidos, al Grupo Joven Latino Americano</p>
+
+
+  <div layout="column" flex>
+    <md-toolbar class="md-primary">
+      <h1 class="md-toolbar-tools">
+        Top Secret Project
+      </h1>
+    </md-toolbar>
+    <md-content class="md-padding">
+      <form name="loginForm">
+        <md-input-container>
+          <label>Nombre de usario</label>
+          <input md-maxlength="30" required name="username" ng-model="vm.login.username">
+          <div ng-messages="loginForm.username.$error">
+            <div ng-message="required">Este es requerido.</div>
+            <div ng-message="md-maxlength">El username debe ser menor a 30 caracteres.</div>
+          </div>
+        </md-input-container>
+        <md-input-container>
+          <label>Client Name</label>
+          <input required name="password" type="password" ng-model="vm.login.password">
+          <div ng-messages="loginForm.password.$error">
+            <div ng-message="required">Este es requerido.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </md-content>
+  </div>
+
 
 </div>
