@@ -9,6 +9,7 @@ angular
     'ngAria',
     'ngAnimate',
     'ngMaterial',
+    'ngMessages',
     'directive.g+signin'
   ])
   .config(function ($routeProvider) {
