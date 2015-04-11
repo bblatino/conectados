@@ -11,7 +11,8 @@ angular
     'ngMaterial',
     'ngMessages',
     'directive.g+signin',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider

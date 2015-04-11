@@ -1,12 +1,18 @@
-<div layout="column" layout-align="center" layout-fill>
+<div layout="column" layout-fill>
   <md-toolbar>
     <div class="md-toolbar-tools">
       <span>Grupo Joven Latino Americano</span>
       <!-- fill up the space between left and right area -->
       <span flex></span>
-      <md-button>
-        logout
-      </md-button>
+      <span ng-controller="AuthCtrl as auth" >
+        <md-button ng-click="auth.register()" ng-if="!vm.user">
+          registrar
+        </md-button>
+        <md-button ng-click="auth.logout()" ng-if="vm.user">
+          salir
+        </md-button>
+      </span>
+
     </div>
   </md-toolbar>
   <h1 class="md-headline"></h1>
@@ -25,10 +31,10 @@
         <form name="loginForm" ng-submit="auth.login(loginForm);">
           <md-input-container>
             <label>Nombre de usario</label>
-            <input md-maxlength="30" required name="username" ng-model="vm.login.username">
-            <div ng-messages="loginForm.username.$error">
+            <input md-maxlength="30" required name="email" type="email" ng-model="vm.login.email">
+            <div ng-messages="loginForm.email.$error">
               <div ng-message="required">Este es requerido.</div>
-              <div ng-message="md-maxlength">El username debe ser menor a 30 caracteres.</div>
+              <div ng-message="md-maxlength">El correo electrónico debe ser menor a 30 caracteres.</div>
             </div>
           </md-input-container>
           <md-input-container>
