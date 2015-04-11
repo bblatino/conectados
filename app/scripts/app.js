@@ -10,7 +10,8 @@ angular
     'ngAnimate',
     'ngMaterial',
     'ngMessages',
-    'directive.g+signin'
+    'directive.g+signin',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
