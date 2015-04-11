@@ -26,16 +26,15 @@ angular.module('conectadosApp')
           $scope.$apply();
         }
         else {
-          $scope.vm.user = authData;
-          console.log('logged', $scope.vm.user);
+          $scope.vm.user = response;
         }
-      });
 
+
+      });
     };
 
     this.logout = function() {
-      console.log('logged out', this, $scope.vm);
-
+      authService.logout();
       $scope.vm.user = undefined;
     };
   });
