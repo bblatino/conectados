@@ -46,7 +46,10 @@
           </md-input-container>
           <md-input-container layout-align="center center">
             <md-button class="md-raised md-primary" type="submit">Entrar</md-button>
-          </md-input-container>
+          </md-input-container >
+          <div ng-messages="loginForm.$error" class="md-input-invalid" layout-align="center center">
+            <div ng-message="code" class="md-error">{{loginForm.$error.message}}</div>
+          </div>
         </form>
       </md-content>
     </md-card>

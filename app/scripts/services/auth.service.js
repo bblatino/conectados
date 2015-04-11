@@ -36,10 +36,11 @@ angular.module('conectadosApp')
       ref.authWithPassword(userObj,
         function onLogged(error, authData) {
           if (error) {
-            console.log(error);
+            cb(error);
           }
           else {
             auth.user = authData;
+            localStorageService.set('user', authData);
             cb(authData);
             cbOnReg && cbOnReg(true);
           }
@@ -81,6 +82,7 @@ angular.module('conectadosApp')
      */
     this.logout = function() {
       ref.unauth();
+      localStorageService.set('user', undefined);
       return true;
     };
 
