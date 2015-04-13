@@ -17,9 +17,6 @@
   </md-toolbar>
   <h1 class="md-headline"></h1>
 
-
-
-
   <!-- Login form -->
   <md-content layout-margin layout-padding>
     <md-card ng-controller="AuthCtrl as auth" ng-if="!vm.user">
@@ -31,7 +28,7 @@
       <md-content class="md-padding">
         <form name="loginForm" ng-submit="auth.login(loginForm);">
           <md-input-container>
-            <label>Nombre de usario</label>
+            <label>Correo Electrónico</label>
             <input md-maxlength="30" required name="email" type="email" ng-model="vm.login.email">
             <div ng-messages="loginForm.email.$error">
               <div ng-message="required">Este es requerido.</div>
@@ -39,7 +36,7 @@
             </div>
           </md-input-container>
           <md-input-container>
-            <label>Client Name</label>
+            <label>Contraseña</label>
             <input required name="password" type="password" ng-model="vm.login.password">
             <div ng-messages="loginForm.password.$error">
               <div ng-message="required">Este es requerido.</div>
