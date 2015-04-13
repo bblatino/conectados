@@ -5,9 +5,12 @@
       <!-- fill up the space between left and right area -->
       <span flex></span>
       <span ng-controller="RegisterCtrl as new" >
-        <md-button ng-click="new.logout()" ng-if="vm.user">
-          salir
-        </md-button>
+       <span ng-if="!vm.user">
+         <a href="#/grupojoven">Volver</a>
+       </span>
+       <md-button ng-click="new.logout()" ng-if="vm.user">
+         salir
+       </md-button>
       </span>
 
     </div>
