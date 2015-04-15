@@ -45,8 +45,8 @@
           </md-input-container>
           <md-input-container>
             <label>Repetir contraseña</label>
-            <input required name="password" type="password" ng-model="vm.register.passwordrepeated">
-            <div ng-messages="registerForm.password.$error">
+            <input required name="passwordrepeated" type="password" ng-model="vm.register.passwordrepeated">
+            <div ng-messages="registerForm.passwordrepeated.$error">
               <div ng-message="required">Este es requerido.</div>
               <div ng-message="passwordverify">Debe ser igual a la contraseña.</div>
             </div>

@@ -13,7 +13,7 @@ angular.module('conectadosApp')
      * @param userObj
      */
     function saveNewUser(userObj) {
-      ref.child('users').child(userObj.id).set(userObj);
+      ref.child('users').child(userObj.uid).set(userObj);
     }
 
     /**
@@ -68,7 +68,7 @@ angular.module('conectadosApp')
           }
         }
         else {
-          auth.loginWithPW(userData, function(authData) {
+          auth.loginWithPW(userObj, function(authData) {
             saveNewUser(authData);
           }, cb);
         }

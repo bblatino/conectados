@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('conectadosApp')
-  .controller('RegisterCtrl', function (authService) {
+  .controller('RegisterCtrl', function (authService, $mdToast) {
     this.register = function(form) {
       // Validate if password ok.
       if (form.password.$viewValue !== form.passwordrepeated.$viewValue) {
@@ -16,6 +16,8 @@ angular.module('conectadosApp')
       };
 
       authService.createUser(userObj, function userCreated(user) {
+        $mdToast.simple();
+
         // Clear wrote data before do the login.
         form.email.$viewValue = '';
         form.password.$viewValue = '';
