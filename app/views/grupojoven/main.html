@@ -19,6 +19,7 @@
 
   <!-- Login form -->
   <md-content layout-margin layout-padding>
+
     <md-card ng-controller="AuthCtrl as auth" ng-if="!vm.user">
       <md-toolbar class="md-primary">
         <h1 class="md-toolbar-tools">
@@ -51,6 +52,24 @@
         </form>
       </md-content>
     </md-card>
+
+
+    <md-content ng-if="vm.user">
+      <p>Hola, esta es la página principal del Grupo Joven Latinoamericano</p>
+
+      <md-subheader class="md-no-sticky">Opciones:</md-subheader>
+      <md-list>
+        <md-list-item>
+          <md-icon md-svg-icon="alarm"></md-icon>
+          <p> Soporte </p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon md-svg-icon="cached"></md-icon>
+          <p>Transmisiones Anteriores</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+
   </md-content>
 
 </div>

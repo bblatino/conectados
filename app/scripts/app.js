@@ -14,7 +14,7 @@ angular
     'LocalStorageModule',
     'firebase'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $mdIconProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -47,4 +47,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    $mdIconProvider
+      .defaultIconSet('img/icons/sets/core-icons.svg', 24);
   });
