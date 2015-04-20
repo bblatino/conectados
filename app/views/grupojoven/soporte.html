@@ -1,9 +1,13 @@
+
+
 <div layout="row">
   <!-- Nav bar -->
   <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('md')">
     <md-toolbar>
       <h1 class="md-toolbar-tools">Menu</h1>
     </md-toolbar>
+
+
     <md-content class="md-padding">
       <md-button class="md-primary" hide-gt-md>
         Close Sidenav Left
@@ -12,14 +16,20 @@
         Team Talk 4
       </p>
     </md-content>
+
   </md-sidenav>
 
   <!-- Contenido -->
   <md-content layout="column" layout-fill>
     <md-toolbar>
-      <h2 class="md-toolbar-tools">
+      <div class="md-toolbar-tools">
         <span>Guías de Soporte</span>
-      </h2>
+        <!-- fill up the space between left and right area -->
+        <span flex></span>
+        <span>
+          <a href="#/grupojoven">Volver</a>
+        </span>
+      </div>
     </md-toolbar>
 
     <!-- Video Tutorial -->

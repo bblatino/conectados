@@ -15,7 +15,6 @@
 
     </div>
   </md-toolbar>
-  <h1 class="md-headline"></h1>
 
   <!-- Login form -->
   <md-content layout-margin layout-padding>
@@ -53,19 +52,24 @@
       </md-content>
     </md-card>
 
-
+    <!-- Opciones -->
     <md-content ng-if="vm.user">
-      <p>Hola, esta es la página principal del Grupo Joven Latinoamericano</p>
-
-      <md-subheader class="md-no-sticky">Opciones:</md-subheader>
-      <md-list>
+      <md-list layout="column">
         <md-list-item>
-          <md-icon md-svg-icon="alarm"></md-icon>
-          <p> Soporte </p>
+          <md-content layout="row" layout-align="start center">
+            <ng-md-icon icon="settings_applications" size="72"></ng-md-icon>
+            <span class="md-list-item-icon">
+              <a href="#/grupojoven/soporte">Soporte</a>
+            </span>
+          </md-content>
         </md-list-item>
         <md-list-item>
-          <md-icon md-svg-icon="cached"></md-icon>
-          <p>Transmisiones Anteriores</p>
+          <md-content layout="row" layout-align="start center">
+            <ng-md-icon icon="local_movies" size="72"></ng-md-icon>
+            <span class="md-list-item-icon">
+              <a href="#/grupojoven/media">Transmisiones Anteriores</a>
+            </span>
+          </md-content>
         </md-list-item>
       </md-list>
     </md-content>

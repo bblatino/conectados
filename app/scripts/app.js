@@ -12,7 +12,8 @@ angular
     'ngMessages',
     'directive.g+signin',
     'LocalStorageModule',
-    'firebase'
+    'firebase',
+    'ngMdIcons'
   ])
   .config(function ($routeProvider, $mdIconProvider) {
     $routeProvider

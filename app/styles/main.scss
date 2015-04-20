@@ -9,3 +9,18 @@
 .home-content {
   text-align: center;
 }
+
+a {
+  color: rgb(63,81,181);
+  text-decoration: none;
+}
+
+span {
+  &.md-list-item-icon {
+    margin-left: 10px;
+  }
+
+  a {
+    font-size: larger;
+  }
+}
