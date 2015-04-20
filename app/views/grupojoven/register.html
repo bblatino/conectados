@@ -29,7 +29,7 @@
         <form name="registerForm" ng-submit="new.register(registerForm);">
           <md-input-container>
             <label>Correo Electrónico</label>
-            <input md-maxlength="30" required name="email" type="email" ng-model="vm.register.email">
+            <input md-maxlength="30" required name="email" type="email"  class="md-input" ng-model="vm.register.email">
             <div ng-messages="registerForm.email.$error">
               <div ng-message="required">Este es requerido.</div>
               <div ng-message="email">Este es requerido.</div>
@@ -38,14 +38,14 @@
           </md-input-container>
           <md-input-container>
             <label>Contraseña</label>
-            <input required name="password" type="password" ng-model="vm.register.password">
+            <input required name="password" type="password"  ng-model="vm.register.password">
             <div ng-messages="registerForm.password.$error">
               <div ng-message="required">Este es requerido.</div>
             </div>
           </md-input-container>
           <md-input-container>
             <label>Repetir contraseña</label>
-            <input required name="passwordrepeated" type="password" ng-model="vm.register.passwordrepeated">
+            <input required name="passwordrepeated" type="password"  ng-model="vm.register.passwordrepeated">
             <div ng-messages="registerForm.passwordrepeated.$error">
               <div ng-message="required">Este es requerido.</div>
               <div ng-message="passwordverify">Debe ser igual a la contraseña.</div>

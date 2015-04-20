@@ -44,6 +44,10 @@ angular
         templateUrl: 'views/biblioteca/biblioteca.html',
         controller: 'ListBibliotecaCtrl'
       })
+      .when('/grupojoven/media-upload', {
+        templateUrl: 'views/grupojoven/media-upload.html',
+        controller: 'RegisterCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
