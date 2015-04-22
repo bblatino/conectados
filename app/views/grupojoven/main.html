@@ -1,4 +1,56 @@
-<div layout="row" layout-align="center center">
-  <p>Bienvenidos, al Grupo Joven Latino Americano</p>
+<div layout="column" layout-fill>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Grupo Joven Latino Americano</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <span ng-controller="AuthCtrl as auth" >
+        <span ng-if="!vm.user">
+          <a href="#/grupojoven/register">Registrar</a>
+        </span>
+        <md-button ng-click="auth.logout()" ng-if="vm.user">
+          salir
+        </md-button>
+      </span>
+
+    </div>
+  </md-toolbar>
+  <h1 class="md-headline"></h1>
+
+  <!-- Login form -->
+  <md-content layout-margin layout-padding>
+    <md-card ng-controller="AuthCtrl as auth" ng-if="!vm.user">
+      <md-toolbar class="md-primary">
+        <h1 class="md-toolbar-tools">
+          Acceso
+        </h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+        <form name="loginForm" ng-submit="auth.login(loginForm);">
+          <md-input-container>
+            <label>Correo Electrónico</label>
+            <input md-maxlength="30" required name="email" type="email" ng-model="vm.login.email">
+            <div ng-messages="loginForm.email.$error">
+              <div ng-message="required">Este es requerido.</div>
+              <div ng-message="md-maxlength">El correo electrónico debe ser menor a 30 caracteres.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Contraseña</label>
+            <input required name="password" type="password" ng-model="vm.login.password">
+            <div ng-messages="loginForm.password.$error">
+              <div ng-message="required">Este es requerido.</div>
+            </div>
+          </md-input-container>
+          <md-input-container layout-align="center center">
+            <md-button class="md-raised md-primary" type="submit">Entrar</md-button>
+          </md-input-container >
+          <div ng-messages="loginForm.$error" class="md-input-invalid" layout-align="center center">
+            <div ng-message="code" class="md-error">{{loginForm.$error.message}}</div>
+          </div>
+        </form>
+      </md-content>
+    </md-card>
+  </md-content>
 
 </div>

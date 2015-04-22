@@ -1,0 +1,29 @@
+<div layout="column" layout-fill>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Grupo Joven Latino Americano</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <span ng-controller="AuthCtrl as auth" >
+        <md-button ng-click="auth.register()" ng-if="!vm.user">
+          registrar
+        </md-button>
+        <md-button ng-click="auth.logout()" ng-if="vm.user">
+          salir
+        </md-button>
+      </span>
+
+    </div>
+  </md-toolbar>
+
+  <!-- Login form -->
+  <md-content layout-margin layout-padding>
+    <div class="player">
+      <div id="object" style="background-color: black;"><object width="100%" height="100%" id="player" name="player" data="flowplayer/flowplayer.commercial-3.2.16.swf" type="application/x-shockwave-flash"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="always"><param name="quality" value="high"><param name="bgcolor" value="#000000"><param name="wmode" value="transparent"><param name="flashvars" value="config={&quot;key&quot;:&quot;#@432d5aedb59612f8458&quot;,&quot;clip&quot;:{&quot;url&quot;:&quot;live1-cn4qdiwU-eng-medium.stream&quot;,&quot;live&quot;:true,&quot;bufferLength&quot;:5,&quot;provider&quot;:&quot;rtmp&quot;,&quot;scaling&quot;:&quot;fit&quot;},&quot;canvas&quot;:{&quot;backgroundGradient&quot;:&quot;none&quot;},&quot;plugins&quot;:{&quot;rtmp&quot;:{&quot;url&quot;:&quot;flowplayer.rtmp-3.2.12.swf&quot;,&quot;proxyType&quot;:&quot;HTTP&quot;,&quot;netConnectionUrl&quot;:&quot;rtmp://edge1.il.kab.tv/rtplive&quot;},&quot;controls&quot;:{&quot;autoHide&quot;:&quot;fullscreen&quot;,&quot;play&quot;:false,&quot;stop&quot;:true,&quot;time&quot;:false,&quot;scrubber&quot;:false}},&quot;playerId&quot;:&quot;object&quot;,&quot;playlist&quot;:[{&quot;url&quot;:&quot;live1-cn4qdiwU-eng-medium.stream&quot;,&quot;live&quot;:true,&quot;bufferLength&quot;:5,&quot;provider&quot;:&quot;rtmp&quot;,&quot;scaling&quot;:&quot;fit&quot;}]}"></object></div>
+      <a class="player-btn" onclick="kabtv.tabs.fs(); return false;" style="display: none;"><span class="full_screen"> </span></a>
+    </div>
+  </md-content>
+
+
+
+</div>

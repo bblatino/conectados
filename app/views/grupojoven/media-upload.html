@@ -1,0 +1,73 @@
+<div layout="column" layout-fill>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Grupo Joven Latino Americano</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <span ng-controller="RegisterCtrl as new" >
+       <span ng-if="!vm.user">
+         <a href="#/grupojoven">Volver</a>
+       </span>
+       <md-button ng-click="new.logout()" ng-if="vm.user">
+         salir
+       </md-button>
+      </span>
+
+    </div>
+  </md-toolbar>
+
+  <!-- Login form -->
+  <md-content layout-margin layout-padding>
+    <md-card ng-controller="RegisterCtrl as new" ng-if="!vm.user">
+      <md-toolbar class="md-primary">
+        <h1 class="md-toolbar-tools">
+          Transmisiones anteriores
+        </h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+        <form name="uploadForm" ng-submit="new.upload(uploadForm);">
+          <md-input-container>
+            <label>Nombre de la transmisión</label>
+            <input required name="name" type="text"  ng-model="vm.upload.name">
+            <div ng-messages="uploadForm.name.$error">
+              <div ng-message="required">El nombre es requerido.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Fecha de la transmisión</label>
+            <input required name="date" type="date"  ng-model="vm.upload.date">
+            <div ng-messages="uploadForm.date.$error">
+              <div ng-message="required">La fecha es requerida.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Idioma de la transmisión</label>
+            <input required name="language" type="text"  ng-model="vm.upload.lang">
+            <div ng-messages="uploadForm.language.$error">
+              <div ng-message="required">El idioma es requerido.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Tema de la transmisión</label>
+            <input required name="description" type="text"  ng-model="vm.upload.description">
+            <div ng-messages="uploadForm.description.$error">
+              <div ng-message="required">El tema es requerido.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>URL de la transmisión</label>
+            <input required name="url" type="url"  ng-model="vm.upload.url">
+            <div ng-messages="uploadForm.url.$error">
+              <div ng-message="required">El url es requerido.</div>
+            </div>
+          </md-input-container>
+          <md-input-container layout-align="center center">
+            <md-button class="md-raised md-primary" type="submit">Registrar</md-button>
+          </md-input-container >
+          <div ng-messages="uploadForm.$error" class="md-input-invalid" layout-align="center center">
+            <div ng-message="code" class="md-error">{{uploadForm.$error.message}}</div>
+          </div>
+        </form>
+      </md-content>
+    </md-card>
+</div>

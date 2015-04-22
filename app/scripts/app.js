@@ -9,7 +9,10 @@ angular
     'ngAria',
     'ngAnimate',
     'ngMaterial',
-    'directive.g+signin'
+    'ngMessages',
+    'directive.g+signin',
+    'LocalStorageModule',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -29,9 +32,21 @@ angular
         templateUrl: 'views/grupojoven/media.html',
         controller: 'MediaCtrl'
       })
+      .when('/grupojoven/register', {
+        templateUrl: 'views/grupojoven/register.html',
+        controller: 'RegisterCtrl'
+      })
+      .when('/grupojoven/trasmition', {
+        templateUrl: 'views/grupojoven/trasmition.html',
+        controller: 'RegisterCtrl'
+      })
       .when('/biblioteca', {
         templateUrl: 'views/biblioteca/biblioteca.html',
         controller: 'ListBibliotecaCtrl'
+      })
+      .when('/grupojoven/media-upload', {
+        templateUrl: 'views/grupojoven/media-upload.html',
+        controller: 'RegisterCtrl'
       })
       .otherwise({
         redirectTo: '/'
