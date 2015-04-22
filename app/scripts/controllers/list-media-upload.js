@@ -7,8 +7,8 @@
  * Controller of the conectadosApp
  */
 angular.module('conectadosApp')
-  .controller('MediaUploadCtrl', function ($scope, mediaupload) {
-      mediaupload.getDocs().then(function(list) {
+  .controller('UploadCtrl', function ($scope, upload) {
+      upload.getDocs().then(function(list) {
         $scope.videos = list;
       });
     });

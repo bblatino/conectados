@@ -7,21 +7,21 @@
  * @ngdoc service
  * @name conectadosApp.media-upload
  * @description
- * # biblioteca
+ * # tranasmisiones
  * Service in the conectadosApp.
  */
 angular.module('conectadosApp')
-  .service('mediaupload', function ($q) {
+  .service('upload', function ($q) {
     this.getDocs = function() {
       var deferred = $q.defer();
 
       deferred.resolve([
         {
           name: '',
+          date: '',
+          language: '',
           description: '',
-          language: 'es',
           url: '',
-          filename: null,
           type: 'video'
         },
 
