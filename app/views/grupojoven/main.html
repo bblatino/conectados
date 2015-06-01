@@ -9,7 +9,8 @@
           <a href="#/grupojoven/register">Registrar</a>
         </span>
         <md-button ng-click="auth.logout()" ng-if="vm.user">
-          salir
+          <span>salir</span>
+          <ng-md-icon icon="exit_to_app" size="32"></ng-md-icon>
         </md-button>
       </span>
 
@@ -17,7 +18,7 @@
   </md-toolbar>
 
   <!-- Login form -->
-  <md-content layout-margin layout-padding>
+  <md-content layout-margin layout-padding class="login-form">
 
     <md-card ng-controller="AuthCtrl as auth" ng-if="!vm.user">
       <md-toolbar class="md-primary">
@@ -53,16 +54,8 @@
     </md-card>
 
     <!-- Opciones -->
-    <md-content ng-if="vm.user">
+    <md-content>
       <md-list layout="column">
-        <md-list-item>
-          <md-content layout="row" layout-align="start center">
-            <ng-md-icon icon="settings_applications" size="72"></ng-md-icon>
-            <span class="md-list-item-icon">
-              <a href="#/grupojoven/soporte">Soporte</a>
-            </span>
-          </md-content>
-        </md-list-item>
         <md-list-item>
           <md-content layout="row" layout-align="start center">
             <ng-md-icon icon="local_movies" size="72"></ng-md-icon>
