@@ -1,0 +1,9 @@
+<!-- Nav bar -->
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('md')">
+  <!-- Transmisiones anteriores -->
+  <md-content class="md-padding">
+    <p ng-repeat="meet in media.meetings track by $index">
+      <a href="" ng-click="media.goToSection(meet.section)">{{meet.title}}</a>
+    </p>
+  </md-content>
+</md-sidenav>
