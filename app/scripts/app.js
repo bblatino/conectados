@@ -23,7 +23,8 @@ angular
       })
       .when('/grupojoven', {
         templateUrl: 'views/grupojoven/main.html',
-        controller: 'GrupoJovenCtrl'
+        controller: 'GrupoJovenCtrl',
+        title: 'Grupo Joven'
       })
       .when('/grupojoven/soporte', {
         templateUrl: 'views/grupojoven/soporte.html',
@@ -31,15 +32,18 @@ angular
       })
       .when('/grupojoven/media', {
         templateUrl: 'views/grupojoven/media.html',
-        controller: 'MediaCtrl'
+        controller: 'MediaCtrl',
+        title: 'Transmisiones Anteriores'
       })
       .when('/grupojoven/register', {
         templateUrl: 'views/grupojoven/register.html',
-        controller: 'RegisterCtrl'
+        controller: 'RegisterCtrl',
+        title: 'Registro'
       })
       .when('/grupojoven/reset-password', {
         templateUrl: 'views/grupojoven/reset-password.html',
-        controller: 'RegisterCtrl'
+        controller: 'ResetPasswordCtrl',
+        title: 'Recuperar Contraseña'
       })
       .when('/grupojoven/trasmition', {
         templateUrl: 'views/grupojoven/trasmition.html',
