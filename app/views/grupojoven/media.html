@@ -1,13 +1,6 @@
   <!-- Contenido -->
   <md-content id="top" layout="column" layout-fill ng-controller="MediaCtrl as media">
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <!-- fill up the space between left and right area -->
-        <span>
-          <a href="#/grupojoven">Transmisiones Anteriores</a>
-        </span>
-      </div>
-    </md-toolbar>
+    <ng-include src="'views/grupojoven/common/toolbar.html'"></ng-include>
 
     <ng-include src="'views/grupojoven/common/sidenav.html'"></ng-include>
     <media element="media.active"></media>

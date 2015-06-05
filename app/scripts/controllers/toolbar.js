@@ -1,15 +1,13 @@
 'use strict';
 
 angular.module('conectadosApp')
-  .controller('ToolbarCtrl', function ($rootScope, $location ) {
+  .controller('ToolbarCtrl', function ($rootScope, $window, $route) {
     var vm = this;
 
-    $rootScope.$on('$routeChangeSuccess', function(current) {
-      debugger;
-      if (angular.isUndefined(current)) {
-        return;
-      }
-      vm.actualRoute = current.name;
-    });
+    vm.state = $route.current.state;
+    vm.back = backOnHistory;
 
+    function backOnHistory() {
+      $window.history.back();
+    }
   });

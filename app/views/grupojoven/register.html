@@ -1,21 +1,5 @@
 <div layout="column" layout-fill>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <span>Grupo Joven Latino Americano</span>
-      <!-- fill up the space between left and right area -->
-      <span flex></span>
-      <span ng-controller="RegisterCtrl as new" >
-       <span ng-if="!vm.user">
-         <a href="#/grupojoven">Volver</a>
-       </span>
-       <md-button ng-click="new.logout()" ng-if="vm.user">
-         salir
-       </md-button>
-      </span>
-
-    </div>
-  </md-toolbar>
-
+  <ng-include src="'views/grupojoven/common/toolbar.html'"></ng-include>
 
   <h1 class="md-headline"></h1>
 
