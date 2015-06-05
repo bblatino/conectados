@@ -37,6 +37,10 @@ angular
         templateUrl: 'views/grupojoven/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/grupojoven/reset-password', {
+        templateUrl: 'views/grupojoven/reset-password.html',
+        controller: 'RegisterCtrl'
+      })
       .when('/grupojoven/trasmition', {
         templateUrl: 'views/grupojoven/trasmition.html',
         controller: 'RegisterCtrl'

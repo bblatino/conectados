@@ -1,0 +1,17 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <span>Grupo Joven Latino Americano</span>
+    <!-- fill up the space between left and right area -->
+    <span flex></span>
+      <span ng-controller="AuthCtrl as auth" >
+        <span ng-if="!vm.user">
+          <a href="#/grupojoven/register">Registrar</a>
+        </span>
+        <md-button ng-click="auth.logout()" ng-if="vm.user">
+          <span>salir</span>
+          <ng-md-icon icon="exit_to_app" size="32"></ng-md-icon>
+        </md-button>
+      </span>
+
+  </div>
+</md-toolbar>
