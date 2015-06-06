@@ -58,14 +58,16 @@ angular.module('conectadosApp')
         if (error) {
           switch (error.code) {
           case 'EMAIL_TAKEN':
-            console.log('La nueva cuenta de usuario no puede ser creada porque el correo electrónico ya está en uso.');
+            error.message_spa = 'El usuario no puede ser creado! El correo electrónico ya está en uso.';
             break;
           case 'INVALID_EMAIL':
-            console.log('El correo electrónico especificado no es un correo electrónico válido.');
+            error.message_spa = 'El correo electrónico especificado no es un correo electrónico válido.';
             break;
           default:
-            console.log('Error creado el usuario:', error);
+            error.message_spa = 'Error creado el usuario:' + error;
           }
+          // Return the error object.
+          cb(error);
         }
         else {
           auth.loginWithPW(userObj, function(authData) {
