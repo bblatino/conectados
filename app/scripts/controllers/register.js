@@ -7,7 +7,7 @@ angular.module('conectadosApp')
     this.register = createNewUser;
 
     function createNewUser(form) {
-      debugger;
+
       // Validate if password ok.
       if (form.password.$viewValue !== form.passwordrepeated.$viewValue) {
         // Error message.
