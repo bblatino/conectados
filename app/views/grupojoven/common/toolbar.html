@@ -1,0 +1,22 @@
+<md-toolbar ng-controller="ToolbarCtrl as toolbar">
+  <div class="md-toolbar-tools">
+    <span><a href="{{toolbar.state.href}}">{{toolbar.state.title}}</a></span>
+    <!-- Keep span - fill up the space between left and right area -->
+    <span flex></span>
+
+    <!-- Component Authentication -->
+    <span ng-controller="AuthCtrl as auth">
+      <span ng-if="!vm.user && toolbar.state.name !== 'register'">
+        <a href="#/grupojoven/register">Registrar</a>
+      </span>
+      <md-button ng-click="auth.logout()" ng-if="vm.user">
+        <span>salir</span>
+        <ng-md-icon icon="exit_to_app" size="32"></ng-md-icon>
+      </md-button>
+    </span>
+
+    <span class="md-toolbar-divider"></span>
+    <!-- Back link -->
+    <span ng-if="toolbar.state.name !== 'main'"><a href="" ng-click="toolbar.back()">Volver</a></span>
+  </div>
+</md-toolbar>

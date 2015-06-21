@@ -1,4 +1,65 @@
-<div layout="row" layout-align="center center">
-  <p>Bienvenidos, al Grupo Joven Latino Americano</p>
+<div layout="column" layout-fill>
+  <ng-include src="'views/grupojoven/common/toolbar.html'"></ng-include>
+  <!-- Login form -->
+  <md-content layout-margin layout-padding class="login-form center-form">
+
+    <md-content class="md-default-theme" ng-if="!vm.user">
+      <h2 class="md-headline" style="margin-top: 0;">Ver transmisiones...</h2>
+      <p>Para ver el contenido del grupo joven es necesario estar registrado, si no lo estas puedes crear <a href="#/grupojoven/register">crear una nueva cuenta</a>. Si ya tiene una cuenta pueden entrar usando tu usuario y contraseña.</p>
+    </md-content>
+
+    <md-card ng-controller="AuthCtrl as auth" ng-if="!vm.user">
+      <md-toolbar class="md-primary">
+        <h1 class="md-toolbar-tools">
+          Acceso
+        </h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+        <form name="loginForm" ng-submit="auth.login(loginForm);">
+          <md-input-container>
+            <label>Correo Electrónico</label>
+            <input md-maxlength="30" required name="email" type="email" ng-model="vm.login.email">
+            <div ng-messages="loginForm.email.$error">
+              <div ng-message="required">Este es requerido.</div>
+              <div ng-message="md-maxlength">El correo electrónico debe ser menor a 30 caracteres.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Contraseña</label>
+            <input required name="password" type="password" ng-model="vm.login.password">
+            <div ng-messages="loginForm.password.$error">
+              <div ng-message="required">Este es requerido.</div>
+            </div>
+          </md-input-container>
+          <md-input-container layout-align="center center">
+            <md-button class="md-raised md-primary" type="submit">Entrar</md-button>
+          </md-input-container >
+          <div ng-messages="loginForm.$error" class="md-input-invalid" layout-align="center center">
+            <div ng-message="code" class="md-error">{{loginForm.$error.message}}</div>
+          </div>
+        </form>
+      </md-content>
+    </md-card>
+
+    <md-content class="md-default-theme" ng-if="!vm.user">
+      <p>si no recuerdas tu contraseña puedes recuperarla <a href="#/grupojoven/reset-password">aqui</a>.</p>
+    </md-content>
+
+
+    <!-- Opciones -->
+    <md-content ng-if="vm.user">
+      <md-list layout="column">
+        <md-list-item>
+          <md-content layout="row" layout-align="start center">
+            <ng-md-icon icon="local_movies" size="72"></ng-md-icon>
+            <span class="md-list-item-icon">
+              <a href="#/grupojoven/media">Transmisiones Anteriores</a>
+            </span>
+          </md-content>
+        </md-list-item>
+      </md-list>
+    </md-content>
+
+  </md-content>
 
 </div>
